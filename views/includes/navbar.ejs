@@ -1,0 +1,76 @@
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+  }
+
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .airbnb_nav{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border: 2px solid #fe424d;
+    border-radius: 10px;
+
+  }
+  .search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+  }
+  .logo .fa-airbnb  {
+    color: #fe424d;
+    margin-right: -5px;
+    margin-left: 2rem;
+    font-size: 40px;
+  }
+  .logo p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fe424d;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    font-size: 2rem !important;
+    font-weight: bolder !important;
+  }
+ 
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid logo">
+    <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <a class="nav-link" href="/listings"><p>Wanderlust</p></a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search  destinations" >
+          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        </form>
+      </div>
+      <div class="navbar-nav ms-auto " >
+        <a class="nav-link airbnb_nav" href="/listings/new">add New Hotel</a>
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
+          <% } %>
+            <% if(currUser){ %>
+              <a class="nav-link" href="/logout"><b>Log out</b></a>
+              <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
